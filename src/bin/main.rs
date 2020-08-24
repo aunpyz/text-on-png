@@ -6,30 +6,38 @@ fn main() {
     if args.len() != 10 {
         panic!("Number of arguments are not satisfied")
     }
+    let mut args = args.iter();
+    // discard the first argument
+    args.next().unwrap();
 
-    let image: &str = &args[1];
+    let image: &str = args.next().unwrap();
     let font_options: FontOptions = FontOptions::new(
-        (&args[2].parse())
-            .clone()
+        args.next()
+            .unwrap()
+            .parse()
             .expect("This argument must be number convertible, parsing font size filed"),
-        &args[3],
+        args.next().unwrap(),
     );
     let text_area: TextArea = TextArea::new(
-        (&args[4].parse())
-            .clone()
+        args.next()
+            .unwrap()
+            .parse()
             .expect("This argument must be number convertible, parsing x-coord failed"),
-        (&args[5].parse())
-            .clone()
+        args.next()
+            .unwrap()
+            .parse()
             .expect("This argument must be number convertible, parsing y-coord failed"),
-        (&args[6].parse())
-            .clone()
+        args.next()
+            .unwrap()
+            .parse()
             .expect("This argument must be number convertible, parsing width failed"),
-        (&args[7].parse())
-            .clone()
+        args.next()
+            .unwrap()
+            .parse()
             .expect("This argument must be number convertible, parsing height failed"),
     );
-    let message: &str = &args[8];
-    let output: &str = &args[9];
+    let message: &str = args.next().unwrap();
+    let output: &str = args.next().unwrap();
 
     match text_on_png::create(image, font_options, text_area, message, output) {
         Ok(_) => println!("{} created", output),
