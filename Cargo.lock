@@ -403,7 +403,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "text_on_png"
+name = "text-on-png"
 version = "0.1.0"
 dependencies = [
  "cairo-rs",

@@ -1,5 +1,5 @@
 [package]
-name = "text_on_png"
+name = "text-on-png"
 version = "0.1.0"
 authors = ["aunpyz <aunnop_kattiyanet@hotmail.com>"]
 edition = "2018"
