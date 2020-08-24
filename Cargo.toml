@@ -9,3 +9,7 @@ edition = "2018"
 [dependencies.cairo-rs]
 version = "0.9.1"
 features = [ "png" ]
+
+[dependencies]
+pango = "0.9.1"
+pangocairo = "0.10.0"
